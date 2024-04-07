@@ -31,6 +31,6 @@ class InlineBackButton:
     @staticmethod
     def get_cmd_back():
         button_back = [
-            InlineKeyboardButton(text='назад', callback_data='gk')        ]
+            InlineKeyboardButton(text='назад', callback_data='gk')]
         back_markup = InlineKeyboardMarkup(inline_keyboard=[button_back])
         return back_markup
