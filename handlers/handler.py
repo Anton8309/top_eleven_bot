@@ -14,11 +14,11 @@ async def cmd_start(message: Message):
                          reply_markup=KeyBoardPlayer.get_player_position())
 
 
-@router_handler.message(F.text.lower() == 'gk')
+@router_handler.message(F.text == KeyBoardPlayer.GK)
 async def cmd_gk(message: Message):
     await message.answer(text=f'{KeyBoardPlayer.GK}', reply_markup=InlineKeyboardPlayers.get_inline_gk())
 
 
-@router_handler.message(F.text.lower() == 'cd')
+@router_handler.message(F.text == KeyBoardPlayer.CD)
 async def cmd_cd(message: Message):
     await message.answer(text=f'{KeyBoardPlayer.CD}', reply_markup=InlineKeyboardPlayers.get_inline_cd())
