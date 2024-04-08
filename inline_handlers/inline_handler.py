@@ -16,3 +16,4 @@ async def get_inline_gk(callback: CallbackQuery):
 async def get_inline_gk(callback: CallbackQuery):
     await callback.message.answer(text='тренеровка'.title(), reply_markup=InlineBackButton.get_cmd_back())
     await callback.answer(text=None, show_alert=None)
+
