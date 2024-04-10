@@ -3,11 +3,20 @@ from aiogram.utils.keyboard import ReplyKeyboardMarkup, KeyboardButton
 
 class KeyBoardPlayer:
     GK: str = 'gk'.upper()
-    CD: str = 'cd'.upper()
+    DC: str = 'dc'.upper()
+    DLDR: str = 'dldr'.upper()
+    DMC: str = 'dmc'.upper()
+    MC: str = 'mc'.upper()
 
     @staticmethod
     def get_player_position():
-        button_gk = KeyboardButton(text='gk'.upper())
-        button_cd = KeyboardButton(text='cd'.upper())
-        markup = ReplyKeyboardMarkup(keyboard=[[button_gk, button_cd]], resize_keyboard=True)
-        return markup
+        kb = [
+            [KeyboardButton(text=KeyBoardPlayer.GK)],
+            [KeyboardButton(text=KeyBoardPlayer.DC)],
+            [KeyboardButton(text=KeyBoardPlayer.DLDR)],
+            [KeyboardButton(text=KeyBoardPlayer.DMC)],
+            [KeyboardButton(text=KeyBoardPlayer.MC)],
+
+        ]
+        markup_keyboards = ReplyKeyboardMarkup(keyboard=kb, resize_keyboard=True)
+        return markup_keyboards
