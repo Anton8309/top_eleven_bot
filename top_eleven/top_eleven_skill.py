@@ -74,6 +74,9 @@ class AMLAMR:
     coach_aml_amr = coaching_aml_amr
 
 
+MIDFIELDER_AML_AMR = AMLAMR()
+
+
 class AMC:
     # AMC
     name_class = 'AMC'
