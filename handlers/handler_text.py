@@ -42,3 +42,10 @@ class HandlerTextMlMr:
     SKILLS: str = 'навыки >>>>>>'.title()
     TRAINING: str = 'тренеровка >>>>>>'.title()
     BACK: str = '<<<<<< назад'.title()
+
+
+class HandlerTextAmlAmr:
+    AML_AMR: str = 'левый и правый атакующий полузащитник ⚽'.title()
+    SKILLS: str = 'навыки >>>>>>>'.title()
+    TRAINING: str = 'тренеровка >>>>>>>'.title()
+    BACK: str = '<<<<<<< назад'.title()
