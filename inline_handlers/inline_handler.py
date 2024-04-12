@@ -87,7 +87,7 @@ async def get_inline_dl_dr(callback: CallbackQuery):
 async def get_inline_dl_dr(callback: CallbackQuery):
     await callback.message.answer(
         text=f'<b>{DEFENDER_DLDR.coach_dl_dr}</b>',
-        reply_markup=InlineBackButton.get_cmd_dc_back(),
+        reply_markup=InlineBackButton.get_cmd_dl_dr_back(),
         parse_mode='HTML'
     )
     await callback.answer(text=None, show_alert=None)
