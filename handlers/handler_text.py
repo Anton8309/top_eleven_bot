@@ -35,3 +35,10 @@ class HandlerTextMc:
     SKILLS: str = 'навыки >>>>>'.title()
     TRAINING: str = 'тренеровка >>>>>'.title()
     BACK: str = '<<<<< назад'.title()
+
+
+class HandlerTextMlMr:
+    MLMR: str = 'левый и правый полузащитник ⚽'.title()
+    SKILLS: str = 'навыки >>>>>>'.title()
+    TRAINING: str = 'тренеровка >>>>>>'.title()
+    BACK: str = '<<<<<< назад'.title()
