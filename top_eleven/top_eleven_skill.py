@@ -63,6 +63,9 @@ class MLMR:
     coach_ml_mr = coaching_ml_mr
 
 
+MIDFIELDER_ML_MR = MLMR()
+
+
 class AMLAMR:
     # AMLAMR
 
