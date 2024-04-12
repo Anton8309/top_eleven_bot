@@ -3,8 +3,9 @@ from aiogram.handlers.callback_query import CallbackQuery
 from inline_keyboard.inline_keyboard import InlineBackButton
 
 from inline_keyboard.inline_keyboard import InlineKeyboardPlayers
-from handlers.handler_text import HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc, HandlerTextMc
-from top_eleven.top_eleven_skill import GOALKEEPER, DEFENDER, DEFENDER_DLDR, SUPPORTING, MIDFIELDER
+from handlers.handler_text import (HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc, HandlerTextMc,
+                                   HandlerTextMlMr)
+from top_eleven.top_eleven_skill import GOALKEEPER, DEFENDER, DEFENDER_DLDR, SUPPORTING, MIDFIELDER, MIDFIELDER_ML_MR
 
 router_inline_handler = Router()
 
@@ -164,4 +165,33 @@ async def get_inline_mc_back(callback: CallbackQuery):
     )
     await callback.answer(text=None, show_alert=None)
 
+
 # -------------------------------------------------MLMR----------------------------------------------------------------#
+@router_inline_handler.callback_query(F.data == HandlerTextMlMr.SKILLS)
+async def get_inline_ml_mr(callback: CallbackQuery):
+    await callback.message.answer(
+        text=f'<b>{MIDFIELDER_ML_MR.skill_ml_mr}</b>',
+        reply_markup=InlineBackButton.get_cmd_ml_mr_back(),
+        parse_mode='HTML'
+    )
+    await callback.answer(text=None, show_alert=None)
+
+
+@router_inline_handler.callback_query(F.data == HandlerTextMlMr.TRAINING)
+async def get_inline_ml_mr(callback: CallbackQuery):
+    await callback.message.answer(
+        text=f'<b>{MIDFIELDER_ML_MR.coach_ml_mr}</b>',
+        reply_markup=InlineBackButton.get_cmd_ml_mr_back(),
+        parse_mode='HTML'
+    )
+    await callback.answer(text=None, show_alert=None)
+
+
+@router_inline_handler.callback_query(F.data == HandlerTextMlMr.BACK)
+async def get_inline_ml_mr_back(callback: CallbackQuery):
+    await callback.message.answer(
+        text=f'<b>{HandlerTextMlMr.MLMR}</b>',
+        reply_markup=InlineKeyboardPlayers.get_inline_ml_mr(),
+        parse_mode='HTML'
+    )
+    await callback.answer(text=None, show_alert=None)
