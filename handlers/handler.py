@@ -2,8 +2,8 @@ from aiogram import Router, F
 from aiogram.handlers.message import Message
 from aiogram.filters.command import CommandStart
 
-from handlers.handler_text import HandlerText, HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc, \
-    HandlerTextMc
+from handlers.handler_text import (HandlerText, HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc,
+                                   HandlerTextMc, HandlerTextMlMr)
 from keyboards.keyboard import KeyBoardPlayer
 from inline_keyboard.inline_keyboard import InlineKeyboardPlayers
 
@@ -61,3 +61,13 @@ async def cmd_mc(message: Message):
         reply_markup=InlineKeyboardPlayers.get_inline_mc(),
         parse_mode='HTML'
     )
+
+
+@router_handler.message(F.text == KeyBoardPlayer.MLMR)
+async def cmd_ml_mr(message: Message):
+    await message.answer(
+        text=f'<b>{HandlerTextMlMr.MLMR}</b>',
+        reply_markup=InlineKeyboardPlayers.get_inline_ml_mr(),
+        parse_mode='HTML'
+    )
+
