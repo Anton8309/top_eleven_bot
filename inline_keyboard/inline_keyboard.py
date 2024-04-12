@@ -1,6 +1,7 @@
 from aiogram import Router
 from aiogram.utils.keyboard import InlineKeyboardMarkup, InlineKeyboardButton
-from handlers.handler_text import HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc, HandlerTextMc
+from handlers.handler_text import (HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc, HandlerTextMc,
+                                   HandlerTextMlMr)
 
 router_inline_keyboard = Router()
 
@@ -53,6 +54,15 @@ class InlineKeyboardPlayers:
         inline_markup = InlineKeyboardMarkup(inline_keyboard=[buttons])
         return inline_markup
 
+    @staticmethod
+    def get_inline_ml_mr():
+        buttons = [
+            InlineKeyboardButton(text=HandlerTextMlMr.SKILLS, callback_data=HandlerTextMlMr.SKILLS),
+            InlineKeyboardButton(text=HandlerTextMlMr.TRAINING, callback_data=HandlerTextMlMr.TRAINING)
+        ]
+        inline_markup = InlineKeyboardMarkup(inline_keyboard=[buttons])
+        return inline_markup
+
 
 class InlineBackButton:
     @staticmethod
@@ -91,6 +101,14 @@ class InlineBackButton:
     def get_inline_mc_back():
         button_back = [
             InlineKeyboardButton(text=HandlerTextMc.BACK, callback_data=HandlerTextMc.BACK)
+        ]
+        back_markup = InlineKeyboardMarkup(inline_keyboard=[button_back])
+        return back_markup
+
+    @staticmethod
+    def get_cmd_ml_mr_back():
+        button_back = [
+            InlineKeyboardButton(text=HandlerTextMlMr.BACK, callback_data=HandlerTextMlMr.BACK)
         ]
         back_markup = InlineKeyboardMarkup(inline_keyboard=[button_back])
         return back_markup
