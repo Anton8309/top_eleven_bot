@@ -92,3 +92,6 @@ class ST:
     name_class = 'ST'
     skill_st = skills_st
     coach_st = coaching_st
+
+
+ATTACK = ST()
