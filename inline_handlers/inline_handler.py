@@ -4,9 +4,9 @@ from inline_keyboard.inline_keyboard import InlineBackButton
 
 from inline_keyboard.inline_keyboard import InlineKeyboardPlayers
 from handlers.handler_text import (HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc, HandlerTextMc,
-                                   HandlerTextMlMr, HandlerTextAmlAmr)
+                                   HandlerTextMlMr, HandlerTextAmlAmr, HandlerTextAmc)
 from top_eleven.top_eleven_skill import (GOALKEEPER, DEFENDER, DEFENDER_DLDR, SUPPORTING, MIDFIELDER, MIDFIELDER_ML_MR,
-                                         MIDFIELDER_AML_AMR)
+                                         MIDFIELDER_AML_AMR, MIDFIELDER_AMC)
 
 router_inline_handler = Router()
 
@@ -198,7 +198,7 @@ async def get_inline_ml_mr_back(callback: CallbackQuery):
     await callback.answer(text=None, show_alert=None)
 
 
-# --------------------------------------------------AMLAMR---------------------------------------------------------------#
+# --------------------------------------------------AMLAMR-------------------------------------------------------------#
 @router_inline_handler.callback_query(F.data == HandlerTextAmlAmr.SKILLS)
 async def get_inline_aml_amr_skills(callback: CallbackQuery):
     await callback.message.edit_text(
@@ -224,6 +224,38 @@ async def get_inline_aml_amr_back(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{HandlerTextAmlAmr.AMLAMR}</b>',
         reply_markup=InlineKeyboardPlayers.get_inline_aml_amr(),
+        parse_mode='HTML'
+    )
+    await callback.answer(text=None, show_alert=None)
+
+
+# --------------------------------------------------AMС----------------------------------------------------------------#
+
+@router_inline_handler.callback_query(F.data == HandlerTextAmc.SKILLS)
+async def get_inline_amc_skills(callback: CallbackQuery):
+    await callback.message.edit_text(
+        text=f'<b>{MIDFIELDER_AMC.skill_amc}</b>',
+        reply_markup=InlineBackButton.get_inline_amc_back(),
+        parse_mode='HTML'
+    )
+    await callback.answer(text=None, show_alert=None)
+
+
+@router_inline_handler.callback_query(F.data == HandlerTextAmc.TRAINING)
+async def get_inline_amc_training(callback: CallbackQuery):
+    await callback.message.edit_text(
+        text=f'<b>{MIDFIELDER_AMC.coach_amc}</b>',
+        reply_markup=InlineBackButton.get_inline_amc_back(),
+        parse_mode='HTML'
+    )
+    await callback.answer(text=None, show_alert=None)
+
+
+@router_inline_handler.callback_query(F.data == HandlerTextAmc.BACK)
+async def get_inline_amc_back(callback: CallbackQuery):
+    await callback.message.edit_text(
+        text=f'<b>{HandlerTextAmc.AMC}</b>',
+        reply_markup=InlineKeyboardPlayers.get_inline_amc(),
         parse_mode='HTML'
     )
     await callback.answer(text=None, show_alert=None)
