@@ -72,10 +72,10 @@ async def cmd_ml_mr(message: Message):
     )
 
 
-@router_handler.message(F.text == KeyBoardPlayer.AML_AMR)
+@router_handler.message(F.text == KeyBoardPlayer.AMLAMR)
 async def cmd_aml_amr(message: Message):
     await message.answer(
-        text=f'<b>{HandlerTextAmlAmr.AML_AMR}</b>',
+        text=f'<b>{HandlerTextAmlAmr.AMLAMR}</b>',
         reply_markup=InlineKeyboardPlayers.get_inline_aml_amr(),
         parse_mode='HTML'
     )
