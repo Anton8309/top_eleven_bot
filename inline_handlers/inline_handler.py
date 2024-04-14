@@ -4,16 +4,16 @@ from inline_keyboard.inline_keyboard import InlineBackButton
 
 from inline_keyboard.inline_keyboard import InlineKeyboardPlayers
 from handlers.handler_text import (HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc, HandlerTextMc,
-                                   HandlerTextMlMr, HandlerTextAmlAmr, HandlerTextAmc)
+                                   HandlerTextMlMr, HandlerTextAmlAmr, HandlerTextAmc, HandlerTextSt)
 from top_eleven.top_eleven_skill import (GOALKEEPER, DEFENDER, DEFENDER_DLDR, SUPPORTING, MIDFIELDER, MIDFIELDER_ML_MR,
-                                         MIDFIELDER_AML_AMR, MIDFIELDER_AMC)
+                                         MIDFIELDER_AML_AMR, MIDFIELDER_AMC, ATTACK)
 
 router_inline_handler = Router()
 
 
 # -------------------------------------------------GK------------------------------------------------------------------#
 @router_inline_handler.callback_query(F.data == HandlerTextGk.SKILLS)
-async def get_inline_gk(callback: CallbackQuery):
+async def get_inline_gk_skills(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{GOALKEEPER.skill_gk}</b>',
         reply_markup=InlineBackButton.get_cmd_gk_back(),
@@ -23,7 +23,7 @@ async def get_inline_gk(callback: CallbackQuery):
 
 
 @router_inline_handler.callback_query(F.data == HandlerTextGk.TRAINING)
-async def get_inline_gk(callback: CallbackQuery):
+async def get_inline_gk_training(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{GOALKEEPER.couch_gk}</b>',
         reply_markup=InlineBackButton.get_cmd_gk_back(),
@@ -44,7 +44,7 @@ async def get_cmd_gk_back(callback: CallbackQuery):
 
 # -------------------------------------------------DC------------------------------------------------------------------#
 @router_inline_handler.callback_query(F.data == HandlerTextDc.SKILLS)
-async def get_inline_dc(callback: CallbackQuery):
+async def get_inline_dc_skills(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{DEFENDER.skill_dc}</b>',
         reply_markup=InlineBackButton.get_cmd_dc_back(),
@@ -54,7 +54,7 @@ async def get_inline_dc(callback: CallbackQuery):
 
 
 @router_inline_handler.callback_query(F.data == HandlerTextDc.TRAINING)
-async def get_inline_dc(callback: CallbackQuery):
+async def get_inline_dc_training(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{DEFENDER.coach_dc}</b>',
         reply_markup=InlineBackButton.get_cmd_dc_back(),
@@ -75,7 +75,7 @@ async def get_inline_dc_back(callback: CallbackQuery):
 
 # -------------------------------------------------DLDR----------------------------------------------------------------#
 @router_inline_handler.callback_query(F.data == HandlerTextDlDr.SKILLS)
-async def get_inline_dl_dr(callback: CallbackQuery):
+async def get_inline_dl_dr_skills(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{DEFENDER_DLDR.skill_dl_dr}</b>',
         reply_markup=InlineBackButton.get_cmd_dl_dr_back(),
@@ -85,7 +85,7 @@ async def get_inline_dl_dr(callback: CallbackQuery):
 
 
 @router_inline_handler.callback_query(F.data == HandlerTextDlDr.TRAINING)
-async def get_inline_dl_dr(callback: CallbackQuery):
+async def get_inline_dl_dr_training(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{DEFENDER_DLDR.coach_dl_dr}</b>',
         reply_markup=InlineBackButton.get_cmd_dl_dr_back(),
@@ -106,7 +106,7 @@ async def get_inline_dl_dr_back(callback: CallbackQuery):
 
 # -------------------------------------------------DMC-----------------------------------------------------------------#
 @router_inline_handler.callback_query(F.data == HandlerTextDmc.SKILLS)
-async def get_inline_dmc(callback: CallbackQuery):
+async def get_inline_dmc_skills(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{SUPPORTING.skill_dmc}</b>',
         reply_markup=InlineBackButton.get_cmd_dmc_back(),
@@ -116,7 +116,7 @@ async def get_inline_dmc(callback: CallbackQuery):
 
 
 @router_inline_handler.callback_query(F.data == HandlerTextDmc.TRAINING)
-async def get_inline_dmc(callback: CallbackQuery):
+async def get_inline_dmc_training(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{SUPPORTING.coach_dmc}</b>',
         reply_markup=InlineBackButton.get_cmd_dmc_back(),
@@ -138,7 +138,7 @@ async def get_inline_dmc_back(callback: CallbackQuery):
 # -------------------------------------------------MC------------------------------------------------------------------#
 
 @router_inline_handler.callback_query(F.data == HandlerTextMc.SKILLS)
-async def get_inline_mc(callback: CallbackQuery):
+async def get_inline_mc_skills(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{MIDFIELDER.skill_mc}</b>',
         reply_markup=InlineBackButton.get_inline_mc_back(),
@@ -148,7 +148,7 @@ async def get_inline_mc(callback: CallbackQuery):
 
 
 @router_inline_handler.callback_query(F.data == HandlerTextMc.TRAINING)
-async def get_inline_mc(callback: CallbackQuery):
+async def get_inline_mc_training(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{MIDFIELDER.coach_mc}</b>',
         reply_markup=InlineBackButton.get_inline_mc_back(),
@@ -169,7 +169,7 @@ async def get_inline_mc_back(callback: CallbackQuery):
 
 # --------------------------------------------------MLMR---------------------------------------------------------------#
 @router_inline_handler.callback_query(F.data == HandlerTextMlMr.SKILLS)
-async def get_inline_ml_mr(callback: CallbackQuery):
+async def get_inline_ml_mr_skills(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{MIDFIELDER_ML_MR.skill_ml_mr}</b>',
         reply_markup=InlineBackButton.get_cmd_ml_mr_back(),
@@ -179,7 +179,7 @@ async def get_inline_ml_mr(callback: CallbackQuery):
 
 
 @router_inline_handler.callback_query(F.data == HandlerTextMlMr.TRAINING)
-async def get_inline_ml_mr(callback: CallbackQuery):
+async def get_inline_ml_mr_training(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{MIDFIELDER_ML_MR.coach_ml_mr}</b>',
         reply_markup=InlineBackButton.get_cmd_ml_mr_back(),
@@ -256,6 +256,37 @@ async def get_inline_amc_back(callback: CallbackQuery):
     await callback.message.edit_text(
         text=f'<b>{HandlerTextAmc.AMC}</b>',
         reply_markup=InlineKeyboardPlayers.get_inline_amc(),
+        parse_mode='HTML'
+    )
+    await callback.answer(text=None, show_alert=None)
+
+
+# --------------------------------------------------ST----------------------------------------------------------------#
+
+@router_inline_handler.callback_query(F.data == HandlerTextSt.SKILLS)
+async def get_inline_st_skills(callback: CallbackQuery):
+    await callback.message.edit_text(
+        text=f'<b>{ATTACK.skill_st}</b>',
+        reply_markup=InlineBackButton.get_inline_st_back(),
+        parse_mode='HTML'
+    )
+    await callback.answer(text=None, show_alert=None)
+
+
+@router_inline_handler.callback_query(F.data == HandlerTextSt.TRAINING)
+async def get_inline_st_training(callback: CallbackQuery):
+    await callback.message.edit_text(
+        text=f'<b>{ATTACK.coach_st}</b>',
+        reply_markup=InlineBackButton.get_inline_st_back(),
+        parse_mode='HTML'
+    )
+
+
+@router_inline_handler.callback_query(F.data == HandlerTextSt.BACK)
+async def get_inline_st_back(callback: CallbackQuery):
+    await callback.message.edit_text(
+        text=f'<b>{HandlerTextSt.ST}</b>',
+        reply_markup=InlineKeyboardPlayers.get_inline_st(),
         parse_mode='HTML'
     )
     await callback.answer(text=None, show_alert=None)
