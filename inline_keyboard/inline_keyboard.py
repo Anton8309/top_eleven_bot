@@ -138,3 +138,11 @@ class InlineBackButton:
         ]
         back_markup = InlineKeyboardMarkup(inline_keyboard=[button_back])
         return back_markup
+
+    @staticmethod
+    def get_inline_amc_back():
+        button_back = [
+            InlineKeyboardButton(text=HandlerTextAmc.BACK, callback_data=HandlerTextAmc.BACK)
+        ]
+        back_markup = InlineKeyboardMarkup(inline_keyboard=[button_back])
+        return back_markup
