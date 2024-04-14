@@ -10,6 +10,7 @@ class KeyBoardPlayer:
     MC: str = 'mc'.upper()
     MLMR: str = 'mlmr'.upper()
     AMLAMR: str = 'amlamr'.upper()
+    AMC: str = 'amc'.upper()
 
     @staticmethod
     def get_player_position():
@@ -21,6 +22,7 @@ class KeyBoardPlayer:
             [KeyboardButton(text=KeyBoardPlayer.MC)],
             [KeyboardButton(text=KeyBoardPlayer.MLMR)],
             [KeyboardButton(text=KeyBoardPlayer.AMLAMR)],
+            [KeyboardButton(text=KeyBoardPlayer.AMC)],
 
         ]
         markup_keyboards = ReplyKeyboardMarkup(keyboard=kb, resize_keyboard=True,
