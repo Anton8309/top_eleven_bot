@@ -1,5 +1,6 @@
 class HandlerText:
     HELLO: str = 'привет'.title()
+    TITLE: str = 'Выберите кнопку с позицией игрока!'
 
 
 class HandlerTextGk:
@@ -17,7 +18,9 @@ class HandlerTextDc:
 
 
 class HandlerTextDlDr:
-    DLDR: str = 'правый и левый защитник ⚽'.title()
+    DLDR: str = ('правый и левый защитник ⚽'.title().
+                 replace('И', 'и').
+                 replace('З', 'з'))
     SKILLS: str = '\t\tнавыки'.title()
     TRAINING: str = '\t\tтренеровка'.title()
     BACK: str = '\t\tназад'.title()
@@ -38,14 +41,23 @@ class HandlerTextMc:
 
 
 class HandlerTextMlMr:
-    MLMR: str = 'левый и правый полузащитник ⚽'.title()
+    MLMR: str = ('левый и правый полузащитник ⚽'.title().
+                 replace('И', 'и').
+                 replace('П', 'п').
+                 replace('правый', 'Правый'))
+
     SKILLS: str = '\t\t\t\t\tнавыки'.title()
     TRAINING: str = '\t\t\t\t\tтренеровка'.title()
     BACK: str = '\t\t\t\t\tназад'.title()
 
 
 class HandlerTextAmlAmr:
-    AML_AMR: str = 'левый и правый атакующий полузащитник ⚽'.title()
+    AMLAMR: str = (('левый и правый атакующий полузащитник ⚽'.title().
+                    replace('И', 'и').
+                    replace('П', 'п').
+                    replace('правый', 'Правый')).
+                   replace('А', 'а'))
+
     SKILLS: str = '\t\t\t\t\t\tнавыки'.title()
     TRAINING: str = '\t\t\t\t\t\tтренеровка'.title()
     BACK: str = '\t\t\t\t\t\tназад'.title()
