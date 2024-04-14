@@ -74,7 +74,7 @@ class HandlerTextAmc:
 
 
 class HandlerTextSt:
-    AMC: str = 'нападающий ⚽'.title()
+    ST: str = 'нападающий ⚽'.title()
 
     SKILLS: str = '\t\t\t\t\t\t\t\tнавыки'.title()
     TRAINING: str = '\t\t\t\t\t\t\t\tтренеровка'.title()
