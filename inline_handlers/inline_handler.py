@@ -222,7 +222,7 @@ async def get_inline_aml_amr_training(callback: CallbackQuery):
 @router_inline_handler.callback_query(F.data == HandlerTextAmlAmr.BACK)
 async def get_inline_aml_amr_back(callback: CallbackQuery):
     await callback.message.edit_text(
-        text=f'<b>{HandlerTextAmlAmr.AML_AMR}</b>',
+        text=f'<b>{HandlerTextAmlAmr.AMLAMR}</b>',
         reply_markup=InlineKeyboardPlayers.get_inline_aml_amr(),
         parse_mode='HTML'
     )
