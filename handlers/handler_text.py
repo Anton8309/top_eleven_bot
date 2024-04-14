@@ -61,3 +61,13 @@ class HandlerTextAmlAmr:
     SKILLS: str = '\t\t\t\t\t\tнавыки'.title()
     TRAINING: str = '\t\t\t\t\t\tтренеровка'.title()
     BACK: str = '\t\t\t\t\t\tназад'.title()
+
+
+class HandlerTextAmc:
+    AMC: str = (('центральный аткующий полузащитник ⚽'.title().
+                 replace('А', 'а')).
+                replace('П', 'п'))
+
+    SKILLS: str = '\t\t\t\t\t\t\tнавыки'.title()
+    TRAINING: str = '\t\t\t\t\t\t\tтренеровка'.title()
+    BACK: str = '\t\t\t\t\t\t\tназад'.title()
