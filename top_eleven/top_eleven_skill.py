@@ -84,6 +84,9 @@ class AMC:
     coach_amc = coaching_amc
 
 
+MIDFIELDER_AMC = AMC()
+
+
 class ST:
     # ST
     name_class = 'ST'
