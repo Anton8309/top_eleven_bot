@@ -71,3 +71,11 @@ class HandlerTextAmc:
     SKILLS: str = '\t\t\t\t\t\t\tнавыки'.title()
     TRAINING: str = '\t\t\t\t\t\t\tтренеровка'.title()
     BACK: str = '\t\t\t\t\t\t\tназад'.title()
+
+
+class HandlerTextSt:
+    AMC: str = 'нападающий ⚽'.title()
+
+    SKILLS: str = '\t\t\t\t\t\t\t\tнавыки'.title()
+    TRAINING: str = '\t\t\t\t\t\t\t\tтренеровка'.title()
+    BACK: str = '\t\t\t\t\t\t\t\tназад'.title()
