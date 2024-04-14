@@ -3,7 +3,7 @@ from aiogram.handlers.message import Message
 from aiogram.filters.command import CommandStart
 
 from handlers.handler_text import (HandlerText, HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc,
-                                   HandlerTextMc, HandlerTextMlMr, HandlerTextAmlAmr)
+                                   HandlerTextMc, HandlerTextMlMr, HandlerTextAmlAmr, HandlerTextAmc)
 from keyboards.keyboard import KeyBoardPlayer
 from inline_keyboard.inline_keyboard import InlineKeyboardPlayers
 
@@ -77,5 +77,14 @@ async def cmd_aml_amr(message: Message):
     await message.answer(
         text=f'<b>{HandlerTextAmlAmr.AMLAMR}</b>',
         reply_markup=InlineKeyboardPlayers.get_inline_aml_amr(),
+        parse_mode='HTML'
+    )
+
+
+@router_handler.message(F.text == KeyBoardPlayer.AMC)
+async def cmd_amc(message: Message):
+    await message.answer(
+        text=f'<b>{HandlerTextAmc.AMC}</b>',
+        reply_markup=InlineKeyboardPlayers.get_inline_amc(),
         parse_mode='HTML'
     )
