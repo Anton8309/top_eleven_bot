@@ -1,6 +1,6 @@
 from aiogram import Router, F
 from aiogram.handlers.message import Message
-from aiogram.filters.command import CommandStart
+from aiogram.filters.command import CommandStart, Command
 
 from handlers.handler_text import (HandlerText, HandlerTextGk, HandlerTextDc, HandlerTextDlDr, HandlerTextDmc,
                                    HandlerTextMc, HandlerTextMlMr, HandlerTextAmlAmr, HandlerTextAmc, HandlerTextSt)
@@ -13,8 +13,26 @@ router_handler = Router()
 @router_handler.message(CommandStart())
 async def cmd_start(message: Message):
     await message.answer(
-        text=f'<b>{HandlerText.HELLO} {message.from_user.full_name}!</b>',
-        reply_markup=KeyBoardPlayer.get_player_position(), parse_mode='HTML'
+        text=f'<b>{HandlerText.HELLO} '
+             f'{message.from_user.full_name}!</b>',
+        reply_markup=KeyBoardPlayer.get_player_position(),
+        parse_mode='HTML'
+    )
+
+
+@router_handler.message(Command('help'))
+async def cmd_help(message: Message):
+    await message.answer(
+        text=f'{HandlerText.HELP}',
+        parse_mode='HTML'
+    )
+
+
+@router_handler.message(Command('info'))
+async def cmd_info(message: Message):
+    await message.answer(
+        text=f'{HandlerText.INFO}',
+        parse_mode='HTML'
     )
 
 
