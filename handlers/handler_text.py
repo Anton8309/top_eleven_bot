@@ -1,6 +1,6 @@
 class HandlerText:
     HELLO: str = 'привет'.title()
-    TITLE: str = 'Выберите кнопку с позицией игрока!'
+    TITLE: str = 'Выберите позицию(кнопку) игрока!'
 
 
 class HandlerTextGk:
