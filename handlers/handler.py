@@ -90,7 +90,7 @@ async def cmd_amc(message: Message):
     )
 
 
-@router_handler.message(F.text == HandlerTextSt.ST)
+@router_handler.message(F.text == KeyBoardPlayer.ST)
 async def cmd_st(message: Message):
     await message.answer(
         text=f'<b>{HandlerTextSt.ST}</b>',
