@@ -21,6 +21,7 @@ class HandlerText:
     INFO: str = ('<b>name program: top_eleven_bot</b>''\n'
                  '<b>version: 1.0</b>''\n'
                  '<b>language: python 3.11 </b>''\n'
+                 '<b>library: aiogram 3.4.1</b>''\n'
                  '<b>author: anton demidov</b>''\n'
                  '<b>link: https://github.com/Anton8309</b>'.title())
 
