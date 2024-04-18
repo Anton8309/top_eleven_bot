@@ -1,14 +1,14 @@
 import asyncio
 import logging
-import configs.config
 import handlers
 import inline_handlers
+import configs.config
 
 from aiogram import Bot, Dispatcher
 
 
 async def main():
-    bot = Bot(token=configs.configs.bot_token.get_secret_value())
+    bot = Bot(token=configs.config.configs.bot_token.get_secret_value())
     dp = Dispatcher()
     dp.include_routers(handlers.router_handler, inline_handlers.router_inline_handler)
 
