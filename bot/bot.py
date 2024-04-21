@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import sys
 import handlers
 import inline_handlers
 import configs.config
@@ -16,5 +17,6 @@ async def main():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.INFO, format='[%(asctime)s] - %(name)s - %(levelname)s - %(message)s',
+                        stream=sys.stdout)
     asyncio.run(main())
