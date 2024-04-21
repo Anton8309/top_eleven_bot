@@ -14,7 +14,8 @@ router_handler = Router()
 async def cmd_start(message: Message):
     await message.answer(
         text=f'<b>{HandlerText.HELLO} '
-             f'{message.from_user.full_name}!</b>',
+             f'{message.from_user.full_name}!\n'
+             f'{HandlerText.DESCRIPTION}</b>',
         reply_markup=KeyBoardPlayer.get_player_position(),
         parse_mode='HTML'
     )
