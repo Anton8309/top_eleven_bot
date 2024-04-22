@@ -1,4 +1,1 @@
-<center>
-  <h1>TopElevenBot
-  </h1>
-</cenetr>
+<h1>TopElevenBot</h1>
