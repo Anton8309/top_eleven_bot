@@ -24,7 +24,7 @@ async def cmd_start(message: Message):
 @router_handler.message(Command('help'))
 async def cmd_help(message: Message):
     await message.answer(
-        text=f'<b>{HandlerText.HELP}</b>',
+        text=f'{HandlerText.HELP}',
         parse_mode='HTML'
     )
 
