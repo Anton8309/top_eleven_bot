@@ -8,7 +8,7 @@
 
 ![GitHub followers](https://img.shields.io/github/followers/Anton8309)
 
-![TopElevenBot24](https://t.me/my_top_elevn_robot)
+[TopElevenBot24](https://t.me/my_top_elevn_robot)
 ---
 
 ### Чтобы запустить бота!
